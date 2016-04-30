@@ -1,7 +1,7 @@
 #!/bin/bash
 # distraction free writing with nano
 COLS=125
-DIR=~/destraction/free/write
+DIR=~/distraction/free/write
 DATE=`date +%d%b%y`
 DOIT=create
 
