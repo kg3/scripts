@@ -23,7 +23,7 @@ Various system scripts that do everything from connecting to school networks aut
 # random_keys.sh	
   generate a ton of random files useful for crypto
 # autossh.sh	
-  connect to terminals on the quick with autossh
+  connect to terminals on the quick with autossh and jump right into or back into screen
 # terminal_study_timer.py	
   take computer breaks when working in the terminal
 # true_cracker.py
