@@ -9,7 +9,7 @@ Various system scripts that do everything from connecting to school networks aut
 # download_lecutres.sh	
   scrap files from professor's lecture websites
 # fuck_samba.sh	
-  forget sharing files with samba. SSHFS is more stables, more secure and less setup than Samba
+  forget sharing files with samba. SSHFS is more stable, more secure and less setup than Samba
 # nano_distraction_free_write.sh	
   use nano as those 'distraction-free' writing apps
 # p2p_build_blackList.sh
@@ -22,9 +22,9 @@ Various system scripts that do everything from connecting to school networks aut
   when your android group needs to do work and you want to see their progress live.
 # random_keys.sh	
   generate a ton of random files useful for crypto
-# autoss.sh	
+# autossh.sh	
   connect to terminals on the quick with autossh
 # terminal_study_timer.py	
   take computer breaks when working in the terminal
 # true_cracker.py
-  without complicated crypto, using truecrypt to crack itself of forgotten passwords
+  without complicated crypto, use truecrypt to crack itself of forgotten passwords
