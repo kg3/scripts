@@ -27,4 +27,4 @@ Various system scripts that do everything from connecting to school networks aut
 # terminal_study_timer.py	
   take computer breaks when working in the terminal
 # true_cracker.py
-  without complicated crypto, use truecrypt to crack itself of forgotten passwords
+  without complicated crypto, use truecrypt to brute-force itself of forgotten passwords
