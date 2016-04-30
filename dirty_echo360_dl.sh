@@ -3,7 +3,7 @@
 # collect the urls for each post and put them into one file: urlList.txt; right-click "save-link" on button to play lecture
 # it will downloa the mp3's & flv's of each lecture.
 # urlList.txt:
-#   https://uta-web1.echo360.net/echocontent/1111/0/AAAA1111-0000-111A-0000-111222333444/presentation.xml?1112223334444
+#   https://uuu-web0.echo360.net/echocontent/1111/0/AAAA1111-0000-111A-0000-111222333444/presentation.xml?1112223334444
 #
 
 CLASSURL=urlList.txt
