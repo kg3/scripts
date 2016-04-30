@@ -8,8 +8,8 @@ Various system scripts that do everything from connecting to school networks aut
   there are more concise ways to download lectures from echo360 but this one works albeit manual
 ## download_lecutres.sh	
   scrap files from professor's lecture websites
-## fuck_samba.sh	
-  forget sharing files with samba. SSHFS is more stable, more secure and less setup than Samba, refreshs on connection loss, unlike Samba
+## f_samba.sh	
+  forget sharing files with samba. SSHFS is more stable, more secure and less setup than Samba, refreshes on connection loss, unlike Samba
 ## nano_distraction_free_write.sh	
   use nano as those 'distraction-free' writing apps
 ## p2p_build_blackList.sh
