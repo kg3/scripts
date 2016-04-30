@@ -1,5 +1,6 @@
 #!/bin/bash
-# fuck samba
+# f!ck samba; for real after how long I've been using it and it never quite works correctly
+# mostly the problem is timing out or populating a directory on another machine
 # http://serverfault.com/questions/294109/why-doesnt-sshfs-let-me-look-into-a-mounted-directory
 # for mac
 RUSER=user
