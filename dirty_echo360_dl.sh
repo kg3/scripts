@@ -15,12 +15,12 @@ PPT=audio-vga.m4v
 MP3=audio.mp3
 
 ## MKDIR ##
-if [ ! -d "$flvdir” ]; then
+if [ ! -d "$flvdir" ]; then
   # Control will enter here if $DIRECTORY doesn't exist.
 	mkdir $flvdir
 fi
 
-if [ ! -d "$mp3dir” ]; then
+if [ ! -d "$mp3dir" ]; then
   # Control will enter here if $DIRECTORY doesn't exist.
 	mkdir $mp3dir
 fi
