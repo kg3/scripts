@@ -26,8 +26,6 @@ Various system scripts that do everything from connecting to school networks aut
   connect to terminals on the quick with autossh and jump right into or back into screen
 # terminal_study_timer.py	
   take computer breaks when working in the terminal
-# true_cracker.py
-  without complicated crypto, use truecrypt to brute-force itself of forgotten passwords
   
 # smb.conf
   After several years of trying to get Samba to work properly with Linux & Mac & Windows, going though all the hassels and goolging for untold hours, this /etc/samba/smb.conf file has been the best one that works for me on a local network between the 3 major operating systems.
