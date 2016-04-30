@@ -1,7 +1,7 @@
 #!/bin/bash
-SERVERADDR=server.addr
+SERVERADDR=ser.ver.addr
 USER=user
-P=22
+P=2222
 CMD='screen -xrR'
 ARG='-C'
 
