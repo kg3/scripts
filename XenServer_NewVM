@@ -1,0 +1,76 @@
+#!/bin/bash
+
+ARGS=7
+E_BADARGS=85
+
+if [ $# -ne "$ARGS" ]
+then
+	echo
+	echo "Create a new VM automatically"
+	echo "  Use: xe template-list ; to find template-uuid/name "
+	echo "  Use: xe cd-list ; to find iso-uuid/name "
+	echo "  Use: xe network-list ; to find network-uuid"
+	echo " **CoreMax per socket hard-coded** "
+	echo "Usage: `basename $0` [NEW NAME] [MEMORY] [VCPUs] [DiskSize] [template-uuid] [iso-uuid] [network-uuid]"
+	echo "TEMPLATE=c1155020-275d-f85b-fd41-3a070afd8f16 for debian_x64_7.0"
+	echo "ISO = \"kali-linux-2.0-amd64.iso\" "
+	echo "NETWORK=e7a22711-f502-801a-58fc-b514aaa4cb31 for eth0"
+	echo "example: `basename $0` New 2GiB 4 32GiB uuid uuid uuid"
+	echo
+	exit $E_BADARGS
+fi
+
+## PARAMETERS ##
+LABEL=$1
+MEM=$2
+CORES=$3
+DISKS=$4
+TEMPLATE=$5
+INSTALLISO=$6
+NETWORK=$7
+
+# Memory Size
+#MEM=2GiB
+SMIN=128MiB	# these should stay this value 
+DMIN=256MiB
+# VCPUs
+#CORES=4
+COREMAX=4
+
+### Creating NEW VM ###
+
+# Create new VM with template
+echo "Creating --$LABEL--"
+VMUUID=`xe vm-install template=$TEMPLATE new-name-label=$LABEL`
+
+#disable boot; to use iso to boot
+echo ".. setting disk boot to false .."
+DUUID=`xe vbd-list vm-name-label=$LABEL userdevice=0 | grep -v vm-uuid | grep -v vdi-uuid| grep uuid | cut -d":" -f 2 |cut -d" " -f 2`
+xe vbd-param-set uuid=$DUUID bootable=false
+
+# iso disk to boot install
+echo ".. attaching install iso, setting to boot .."
+xe vm-cd-add vm=$LABEL cd-name=$INSTALLISO device=3
+xe vbd-param-set uuid=$DUUID bootable=true
+xe vm-param-set uuid=$VMUUID other-config:install-repository=cdrom
+
+# setting up network
+echo ".. attaching network with random mac address .."
+xe vif-create vm-uuid=$VMUUID network-uuid=$NETWORK device=0
+
+# changing virtual ram
+echo ".. adjusting virtual ram.."
+xe vm-memory-limits-set dynamic-max=$MEM dynamic-min=$DMIN static-max=$MEM static-min=$SMIN name-label=$LABEL
+
+# changing VCPUs
+echo ".. adjusting VCPUs.."
+xe vm-param-set platform:cores-per-socket=$CORES uuid=$VMUUID
+xe vm-param-set VCPUs-max=$COREMAX uuid=$VMUUID
+xe vm-param-set VCPUs-at-startup=$CORES uuid=$VMUUID
+
+# resizing Disk
+echo ".. resizing disk.."
+VDIUUID=`xe vm-disk-list vm=$LABEL |grep VDI -A 1 |grep -v VDI|cut -d":" -f2 |cut -d" " -f2`
+xe vdi-resize uuid=$VDIUUID disk-size=$DISKS
+
+exit 0
