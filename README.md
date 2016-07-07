@@ -2,6 +2,8 @@
 
 Various system scripts that do everything from connecting to school networks automagically and downloading lectures
 
+### XenServer_NewVM 
+  Automatically create a new Xenserver Virtual Machine from pre-chosen; memory, disk_size, template, ISO.  
 ### auto_mac_change_for_mac.sh	
   automatically change the mac address on macs
 ### dirty_echo360_dl.sh	
