@@ -52,7 +52,7 @@ xe vbd-param-set uuid=$DUUID bootable=false
 # iso disk to boot install
 echo ".. attaching install iso, setting to boot .."
 xe vm-cd-add vm=$LABEL cd-name=$INSTALLISO device=3
-VBUUID=`xe vbd-list vm-name-label=$LABEL userdevice=3 |grep -v vm-uuid |grep -v vdi-uuid |grep uuid |cut -d":" -f 2 |cut -d" " -f2
+VBUUID=`xe vbd-list vm-name-label=$LABEL userdevice=3 |grep -v vm-uuid |grep -v vdi-uuid |grep uuid |cut -d":" -f 2 |cut -d" " -f2`
 xe vbd-param-set uuid=$VBUUID bootable=true
 xe vm-param-set uuid=$VMUUID other-config:install-repository=cdrom
 
