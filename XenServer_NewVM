@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# create a new VM into existing pool directly onto host
+# with many preconfigured options
 ARGS=7
 E_BADARGS=85
 
