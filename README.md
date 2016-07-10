@@ -16,10 +16,8 @@ Various system scripts that do everything from connecting to school networks aut
   use nano as those 'distraction-free' writing apps
 ### p2p_build_blackList.sh
   compile p2p lists into usable blacklists for various applications
-### playAJ.sh
-  stream AlJazeera with ffplay
-### playRT.sh	Update playRT.sh	
-  stream RT with ffplay
+### play.sh
+  stream a live tv or any link from the command line. Currently has links for RT & Al Jazeera
 ### pull_build_sync.sh	
   when your android group needs to do work and you want to see their progress live.
 ### random_keys.sh	
