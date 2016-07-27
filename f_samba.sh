@@ -9,8 +9,8 @@ PORT=2222
 DIR1=/dir1/
 DIR2=/dir2/
 
-OPTIONS='-p $PORT -o allow_other -o kernel_cache -o auto_cache -o reconnect -o compression=no -o cache_timeout=600 -o ServerAliveInterval=15'
+OPTIONS='-o allow_other -o kernel_cache -o auto_cache -o reconnect -o compression=no -o cache_timeout=600 -o ServerAliveInterval=15'
 
-sshfs $OPTIONS $RUSER@$SERVER:$DIR1 $DIR2
+sshfs -p $PORT $OPTIONS $RUSER@$SERVER:$DIR1 $DIR2
 
 exit 0
